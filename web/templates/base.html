@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>N8_C2online代码发布系统</title>
+	<meta name="description" content="">
+	<meta name="author" content="soone">
+	<script src="/static/js/sea.js" data-main="/static/js/init"></script>
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link href="/static/css/bootstrap.css" rel="stylesheet">
+	<style type="text/css">
+	  body {padding-top: 60px;}
+	  .gocenter{text-align:center}
+	  .packhide{height:100px;overflow-y:auto}
+	  .logined{height:40px;line-height:40px;color:#fff}
+	</style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="fill">
+          <div class="container" id="topnav">
+            <a class="brand" href="#">N8_C2online</a>
+            <nav>
+				<ul class="nav">
+						<li><a href="/index">首页</a></li>
+						<li><a href="/project">项目管理</a></li>
+						<li><a href="/servers">服务器管理</a></li>
+				</ul>
+				{{ current_user }}
+				{% if current_user %}
+				<div class="logined pull-right" id="logininfos">你好！<a href="javascript:;">{{ current_user['adm_user'] }}</a>&nbsp;&nbsp;<a href="javascript:;" id="logset">设置</a>&nbsp;&nbsp;<a href="javascript:;" id="logout">退出</a></div>
+				{% else %}
+				<form class="pull-right" id="loginforms">
+					<input class="input-small" type="text" placeholder="Username" name="username" id="loginuserinput">
+					<input class="input-small" type="password" placeholder="Password" name="password">
+					<button class="btn" type="button" id="loginsubmit">登陆</button>
+				</form>
+				{% end %}
+            </nav>
+          </div>
+        </div>
+    </header>
+    <div class="container">
+		<div class="content" id="main">
+		{% block main %}{% end %}
+		</div>
+		<footer><p>&copy; PPL419.com 2011 Author:soone Email:fengyue15#gmail.com</p></footer>
+	</div>
+</body>
+</html>
