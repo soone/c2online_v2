@@ -29,16 +29,6 @@
 						<li><a href="/project">项目管理</a></li>
 						<li><a href="/servers">服务器管理</a></li>
 				</ul>
-				{{ current_user }}
-				{% if current_user %}
-				<div class="logined pull-right" id="logininfos">你好！<a href="javascript:;">{{ current_user['adm_user'] }}</a>&nbsp;&nbsp;<a href="javascript:;" id="logset">设置</a>&nbsp;&nbsp;<a href="javascript:;" id="logout">退出</a></div>
-				{% else %}
-				<form class="pull-right" id="loginforms">
-					<input class="input-small" type="text" placeholder="Username" name="username" id="loginuserinput">
-					<input class="input-small" type="password" placeholder="Password" name="password">
-					<button class="btn" type="button" id="loginsubmit">登陆</button>
-				</form>
-				{% end %}
             </nav>
           </div>
         </div>

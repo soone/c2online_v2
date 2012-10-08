@@ -8,4 +8,11 @@
 				<h1>WELCOME!!!</h1>
 			</div>
 		<!--首页结束-->
+		<script language="javascript" type="text/javascript">
+		var uInfo = [];
+		{% if current_user %}
+		var uInfo = ['{{ current_user["adm_id"] }}', '{{ current_user["adm_user"] }}', '{{ current_user["adm_auth"] }}'];
+		{% end %}
+		seajs.use('/static/js/std', function(std) {std.loginDisplay(uInfo);});
+		</script>
 {% end %}

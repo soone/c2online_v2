@@ -31,7 +31,7 @@ define(function(require, exports, module){
 				return false;
 			}
 
-			std.getJson('post', '/logged/login/', postData, function(data){
+			std.getJson('post', '/auth/login/', postData, function(data){
 				if(data['res'] == 0)
 				{
 					std.alertErrorBox('main', data['msg']);
@@ -48,7 +48,7 @@ define(function(require, exports, module){
 
 		$('#logout').live('click', function(){
 			std.active('logout');
-			std.getJson('get', '/logged/logout/', {}, function(data){
+			std.getJson('get', '/auth/logout/', {}, function(data){
 				if(data['res'] == 0)
 				{
 					std.alertErrorBox('main', data['msg']);
